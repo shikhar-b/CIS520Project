@@ -1,3 +1,8 @@
+addpath('Analysis');
+addpath('Discriminative');
+addpath('Generative');
+addpath('InstanceBased');
+addpath('helper');
 data = load('training_data.mat');
 train_inputs = data.train_inputs;
 train_labels = data.train_labels;

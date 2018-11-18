@@ -7,5 +7,5 @@ function test_labels = glm(train_inputs, train_labels, test_inputs)
         cvglmnetPlot(glmMdl);
         beta = glmMdl.beta;
         alpha = glmMdl.a0;
-        test_labels(:,i) = test_inputs * beta + alpha;
+        test_labels(:,i) = cvglmnetPredict(glmMdl,test_inputs);
     end

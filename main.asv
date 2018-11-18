@@ -1,0 +1,2 @@
+load('C:\Users\dewan\Documents\ML_Final_Project\CIS520Project\training_data.mat')
+[trainInd, valInd, testInd] = divideblock(size(train_inputs,1), 0.7, 0.1, 0.3);

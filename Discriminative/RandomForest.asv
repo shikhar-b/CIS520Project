@@ -1,2 +1,0 @@
-function test_labels = RandomForest(train_inputs, train_labels, test_inputs)
-    Mdl = TreeBagger(10, train)

@@ -1,4 +1,6 @@
 function [train_data, test_data] =preprocess(inputs, test_inputs)
+    inputs = zscore(inputs);
+    test_inputs = zscore(test_inputs);
     X_tweets = inputs(:,22:2021);
     X_demo = inputs(:,1:21);
     [coeff, score, latepnt, tsquared, explained] = pca(X_tweets);

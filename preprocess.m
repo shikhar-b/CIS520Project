@@ -1,4 +1,6 @@
 function [train_data, test_data] =preprocess(inputs, test_inputs)
+    %inputs = createPercentageBins(inputs);
+    %test_inputs = createPercentageBins(test_inputs);
     inputs = zscore(inputs);
     test_inputs = zscore(test_inputs);
     X_tweets = inputs(:,22:2021);

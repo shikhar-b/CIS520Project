@@ -8,6 +8,6 @@ X_test = train_inputs(testInd,:);
 y_test = train_labels(testInd,:);
 %predicted_test_labels = predict_labels(X_train, y_train, X_test);
 %test_error = error_metric(predicted_test_labels,y_test);
-predicted_test_labels = (pred_labels_1+pred_labels_2+pred_labels_3)./3;
+predicted_test_labels = 0.50.*pred_labels_1+0.30.*pred_labels_2+0.25.*pred_labels_3;
 test_error = error_metric(predicted_test_labels,y_test);
 disp(test_error);

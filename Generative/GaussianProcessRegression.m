@@ -24,7 +24,7 @@ function test_labels = GaussianProcessRegression(train_inputs, train_labels, tes
 %         [min_error, ind] = min(error_lambda);
 %         chosen_lambda(i) = lambda(ind);
 %     end
-    chosen_lambda = [ 0.0500    1.0000    0.0500    0.0100    1.0000   10.0000   10.0000    0.0001    0.1000];
+    chosen_lambda = [ 0.0500    1.0000    0.0500    0.0100    1.0000   0.0100   0.0100    0.0001    0.1000];
     for i=1:numoutputs
         train_labels_i = train_labels(:,i);
         gprMdl = fitrgp(train_inputs, train_labels_i,'Regularization',chosen_lambda(i));

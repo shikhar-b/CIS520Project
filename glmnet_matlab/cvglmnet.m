@@ -222,7 +222,7 @@ if nargin < 5 || isempty(type)
     type = 'default';
 end
 if nargin < 6 || isempty(nfolds)
-    nfolds = 10;
+    nfolds = 20;
 end
 if nargin < 7
     foldid = [];

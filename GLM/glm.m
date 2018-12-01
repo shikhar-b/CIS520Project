@@ -4,8 +4,8 @@ function test_labels = glm(train_inputs, train_labels, test_inputs)
     for i=1:numoutputs
         train_labels_i = train_labels(:,i);
         glmMdl = cvglmnet(train_inputs, train_labels_i);
-        cvglmnetPlot(glmMdl);
-        beta = glmMdl.beta;
-        alpha = glmMdl.a0;
+        %cvglmnetPlot(glmMdl);
+        %beta = glmMdl.beta;
+        %alpha = glmMdl.a0;
         test_labels(:,i) = cvglmnetPredict(glmMdl,test_inputs);
     end

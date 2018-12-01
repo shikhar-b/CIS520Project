@@ -30,3 +30,4 @@ function test_labels = GaussianProcessRegression(train_inputs, train_labels, tes
         gprMdl = fitrgp(train_inputs, train_labels_i,'Regularization',chosen_lambda(i));
         test_labels(:,i) = predict(gprMdl,test_inputs);
     end
+

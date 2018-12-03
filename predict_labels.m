@@ -21,8 +21,9 @@ pred_labels_1 = glmRidge(train_inputs, train_labels, test_inputs);
 %pred_labels_3 = glmLARS(train_inputs, train_labels, test_inputs);
 %pred_labels_4 = glmSVM(train_inputs, train_labels, test_inputs);
 pred_labels_5 = glmglmRidge(train_inputs, train_labels, test_inputs);
-pred_labels_6 = GaussianProcessRegression(train_inputs_pre_g, train_labels, test_inputs_pre_g);
-
+pred_labels_6 = GPRResidual(train_inputs_pre_g, train_labels, test_inputs_pre_g);
+%load('pred_labels_1.mat');
+%load('pred_labels_5.mat');
 %save('pred_labels_1.mat','pred_labels_1');
 %save('pred_labels_2.mat','pred_labels_2');
 %save('pred_labels_3.mat','pred_labels_3');

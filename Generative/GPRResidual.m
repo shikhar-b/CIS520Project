@@ -1,9 +1,12 @@
 function test_labels = GPRResidual(train_inputs, train_labels, test_inputs)
     numoutputs = size(train_labels,2);
     test_labels = zeros(size(test_inputs,1),numoutputs);
+<<<<<<< HEAD
     [train_inputs_pre_r, test_inputs_pre_r] = preprocess(train_inputs, test_inputs, 150);
     [train_inputs_pre_g, test_inputs_pre_g] = preprocess(train_inputs, test_inputs, 110);
     
+=======
+>>>>>>> fc32de3f82650dea0d7421807275ba850a2f220e
 %     lambda = [1e-4 1e-3 5*1e-3 1e-2 5*1e-2 1e-1 0.5 1 5 10];
 %     lc = 10;
 %     chosen_lambda = zeros(1,numoutputs);
@@ -28,6 +31,7 @@ function test_labels = GPRResidual(train_inputs, train_labels, test_inputs)
 %         chosen_lambda(i) = lambda(ind);
 %     end
     %chosen_lambda = [ 1e-4    1e-2    1e-5   1e-4    1e-2   1e-2   1e-4    1    1e-2];
+
     predicted_train_labels = zeros(size(train_inputs_pre_g,1),numoutputs);
     for i=1:numoutputs
         train_labels_i = train_labels(:,i);

@@ -36,7 +36,7 @@ addpath('lars_lasso/lars');
 
 pred_labels_1 = glmRidge(train_inputs, train_labels, test_inputs);
 %pred_labels_2 = GPRResidual(train_inputs, train_labels, test_inputs);
-pred_labels_2 = glmglmRidge(train_inputs, train_labels,test_inputs);
+%pred_labels_2 = glmglmRidge(train_inputs, train_labels,test_inputs);
 pred_labels_3 = GPRResidual(train_inputs, train_labels, test_inputs);
 %load('pred_labels_1.mat');
 %load('pred_labels_5.mat');
@@ -52,6 +52,12 @@ pred_labels_3 = GPRResidual(train_inputs, train_labels, test_inputs);
 %pred_labels = (pred_labels_1+pred_labels_2+pred_labels_3+pred_labels_4+pred_labels_5)./5;
 %pred_labels=randn(size(test_inputs,1),size(train_labels,2));
 %pred_labels = pred_labels_6;
-pred_labels = (0.3.*pred_labels_1 + 0.3.*pred_labels_2 + 0.4.*pred_labels_3);
+%pred_labels = (0.3.*pred_labels_1 + 0.3.*pred_labels_2 + 0.4.*pred_labels_3);
+
+%Prediction using the data points for metro/non_metro
+
+pred_labels_cb = getClassBasedLabels(train_inputs, train_labels, test_inputs);
+%pred_labels = 0.0 * pred_labels_cb + 0.5.*pred_labels_1 + 0.5.*pred_labels_5;
+pred_labels = (pred_labels_cb + pred_labels_1 + pred_labels_3 + RandomForestResidual(train_inputs, train_labels, test_inputs))/4;
 end
 

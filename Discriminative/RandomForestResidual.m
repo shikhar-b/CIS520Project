@@ -1,5 +1,5 @@
 function test_labels = RandomForestResidual(train_inputs, train_labels, test_inputs)
-    trees = [300 300 300 300 300 300 300 300 300];
+    trees = [400 400 400 400 400 400 400 400 400];
     numoutputs = size(train_labels,2);
     [train_inputs_pre_r, test_inputs_pre_r] = preprocess(train_inputs, test_inputs, 150);
     test_labels = zeros(size(test_inputs,1),numoutputs);

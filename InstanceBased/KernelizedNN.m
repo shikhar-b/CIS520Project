@@ -1,11 +1,11 @@
 function test_labels = KernelizedNN(train_inputs, train_labels, test_inputs)
-    [n,p] = size(train_inputs)
+    [n,p] = size(train_inputs);
     ids = [1:n];
     ids = ids';
     
     n_fold = 10;
     min_error = intmax;
-    final_sigma = 0.1
+    final_sigma = 0.1;
 %     sigma = [10, 1, 0.1 , 0.01, 0.001, 0.0001];
 %     indices = crossvalind('Kfold',ids,n_fold);    
 %     for sig = sigma
@@ -38,8 +38,8 @@ function test_labels = KernelizedNN(train_inputs, train_labels, test_inputs)
 %         end
 %     end
     
-    fprintf('Finalized sigma = %i\n', final_sigma);
-    fprintf('dev error = %i\n', min_error);
+    %fprintf('Finalized sigma = %i\n', final_sigma);
+    %fprintf('dev error = %i\n', min_error);
     
     %TEST
     predicted_ids = kernel_regression(train_inputs,ids,test_inputs,final_sigma);

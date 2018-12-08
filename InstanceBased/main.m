@@ -1,0 +1,10 @@
+data = load('training_data.mat');
+train_inputs = data.train_inputs;
+train_labels = data.train_labels;
+[trainInd, valInd, testInd] = divideblock(size(train_inputs,1), 0.7, 0.05, 0.25);
+X_train = train_inputs(trainInd,:);
+y_train = train_labels(trainInd,:);
+X_test = train_inputs(testInd,:);
+y_test = train_labels(testInd,:);
+predicted_labels = predict_labels(X_train, y_train, X_test);
+disp(error_metric(predicted_labels, y_test));
